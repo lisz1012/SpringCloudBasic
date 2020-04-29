@@ -13,7 +13,7 @@ eureka:
   client:
     register-with-eureka: false #不向自己注册
     fetch-registry: false #不获取自己的服务、注册列表
-    server-url:
+    service-url:
       defaultZone: http://root:root@eureka-7901:7901/eureka/
   instance:
     hostname: eureka-7901
