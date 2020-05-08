@@ -27,7 +27,7 @@ Eureka也可以单独使用。不管是服务的提供者还是消费者，都�
 提供者不挂、不改服务名和IP就可以。注册表在Eureka Server那里是这样的：Map<name, Map<id, InstanceInfo>>. Eureka Server可以接受别人的和拉取注册，互相之间可以
 同步共享注册表。手动注册获取注册表：`https://github.com/Netflix/eureka/wiki/Eureka-REST-operations`  
 
-自己做一个服务发现注册中心该怎么做？
+自己做一个服务发现注册中心该怎么做？通过这个设计来理解别人的Spring Cloud源码
 
 com.netflix.discovery.DiscoveryClient中有所有客户端与Eureka Server之间的互动：从Eureka Server拉取注册表、服务注册、初始化心跳、缓存刷新（定时拉取注册表信息），
 按需注册定时任务等，贯穿了Eureka Client启动阶段的各项任务。eurreka.client yml配置对应的就是EurekaClientConfigBean这个类. 增量拉取，以3分钟为一个delta。拉取
