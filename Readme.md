@@ -36,4 +36,4 @@ com.netflix.discovery.DiscoveryClient中有所有客户端与Eureka Server之间
 
 eureka-core下的com.netflix.eureka.resourcesInstanceResource是用来接受注册的
 
-注册信息的集群同步有两种方式： 1. 拉取peer的 2. 别人来注册时同步到peer
+注册信息的集群同步有两种方式： 1. 拉取peer的 2. 别人来注册时同步到peer。
