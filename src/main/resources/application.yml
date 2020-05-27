@@ -17,3 +17,4 @@ eureka:
       defaultZone: http://root:root@eureka-7901:7901/eureka/
   instance:
     hostname: eureka-7901
+    prefer-ip-address: true
