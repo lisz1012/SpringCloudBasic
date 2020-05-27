@@ -8,11 +8,11 @@ public class Test3 {
         Entity entity = new Entity("e0");
         Record record = new Record(entity);
         Runnable r = new TraceRunnable(() -> {
-            System.out.println("Inside runnable entity name: " + record.getEntity().getName()); // underlying.run()中执行
+            System.out.println("Inside runnable entity name: " + record.getEntity().getName()); // 这一句会在underlying.run()中执行
         }, record);
         ExecutorService service = Executors.newCachedThreadPool();
         service.execute(r);
-        service.submit(r); // submit可以允许在自定义线程池里有个返回值
+        //service.submit(r);
 
         service.shutdown();
     }
@@ -34,6 +34,5 @@ public class Test3 {
     }
 }
 /* 打印结果：
-Inside runnable entity name: e0
 Inside runnable entity name: e0
  */
