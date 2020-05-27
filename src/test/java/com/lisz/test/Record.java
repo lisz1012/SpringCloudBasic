@@ -1,5 +1,6 @@
 package com.lisz.test;
 
+// 模拟 Record
 public class Record {
     private Entity entity;
 

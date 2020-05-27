@@ -49,6 +49,7 @@ public class TraceContextAwareExecutorService extends AbstractExecutorService {
 
     @Override
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
+        // 这里也可以写一些对于record的操作
         return underlying.invokeAll(tasks);
     }
 }

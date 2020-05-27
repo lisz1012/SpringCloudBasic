@@ -1,5 +1,6 @@
 package com.lisz.test;
 
+// 模拟Entity
 public class Entity {
     private String name;
 

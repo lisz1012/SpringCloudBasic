@@ -43,7 +43,7 @@ public class Test {
         service.shutdown();
     }
 }
-/*打印结果：
+/*打印结果，顺序可能会跟调用顺序（1，2，3）不一样：
 pool-1-thread-1
 pool-1-thread-3
 pool-1-thread-2
