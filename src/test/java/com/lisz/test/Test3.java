@@ -9,7 +9,7 @@ public class Test3 {
         Record record = new Record(entity);
         Runnable r = new TraceRunnable(() -> {
             System.out.println("Inside runnable entity name: " + record.getEntity().getName()); // 这一句会在underlying.run()中执行
-        }, record);
+        });
         ExecutorService service = Executors.newCachedThreadPool();
         service.execute(r);
         //service.submit(r);
@@ -21,7 +21,7 @@ public class Test3 {
         private final Runnable underlying;
         //private final Record recorder;
 
-        public TraceRunnable(Runnable underlying, Record recorder) {
+        public TraceRunnable(Runnable underlying) {
             this.underlying = underlying;
             //this.recorder = recorder;
         }
