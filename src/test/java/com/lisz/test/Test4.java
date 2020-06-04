@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -19,7 +20,7 @@ public class Test4 {
 
     public Test4() {
         mockService = PowerMockito.mock(TraceContextAwareExecutorService.class);
-        PowerMockito.when(mockService.getCurrentSegment()).thenThrow(new RuntimeException("ERROR"));
+        Mockito.when(mockService.getCurrentSegment()).thenThrow(new RuntimeException("ERROR"));
     }
 
 

@@ -55,6 +55,15 @@ public class TraceContextAwareExecutorService extends AbstractExecutorService {
 
     public Callable<String> getCurrentSegment() {
         return () -> {
+            // coverage branch coverage 50%
+           /*
+           try {
+                x = ServiceDao.getInt(); // throws an RuntimeException
+            } catch (e) {
+                ....
+            }
+            */
+
             return "abc";
         };
     }
