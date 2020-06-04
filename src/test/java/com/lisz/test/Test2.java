@@ -36,7 +36,13 @@ public class Test2 {
             service.getRecord().getEntity().setName(name + " - q2");
         }
         // 下面这一句其实是重写Callable.call(){}中的内容，按理说应该根据query返回不同的值，但是这里验证了能用Record和Entity的对象。下面这句话会在子线程启动之后在子线程中执行
-        return service.getRecord().getEntity()::getName;
+        //return service.getRecord().getEntity()::getName;
+        return new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                return service.getRecord().getEntity().getName();
+            }
+        };
     }
 }
 /*打印两个线程全部修改结束后的结果（因为上面调用的是invokeAll方法）：
